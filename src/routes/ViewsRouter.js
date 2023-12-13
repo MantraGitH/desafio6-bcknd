@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { ProductManager } from "../dao/FileSystem/ProductManager.js";
 import ProductDao from "../dao/mongodb/ProductDao.js";
-import { socketServer } from "../express.js";
+import { socketServer } from "../server.js";
 
 const router = Router();
 const productManager = new ProductManager("../src/data/products.json");
@@ -35,6 +35,10 @@ router.post("/realtimeproducts", async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+});
+
+router.get("/", (req, res) => {
+  res.render("login");
 });
 
 export default router;

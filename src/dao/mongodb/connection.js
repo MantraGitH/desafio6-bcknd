@@ -10,3 +10,5 @@ export const initMongoDB = async () => {
     console.log("Error al conectar con MongoDB");
   }
 };
+
+// cambié la password del string de conexión, la anterior era camiloarias56
